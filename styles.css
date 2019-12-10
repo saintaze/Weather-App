@@ -200,7 +200,7 @@ label {
 .meter {
   position: absolute;
   left: -15.9rem;
-  width: 8.9rem;
+  width: 9rem;
   height: 16rem;
   animation: dance 8s infinite forwards;
   opacity: 0;
@@ -262,7 +262,7 @@ input:-webkit-autofill:active {
   left: -15.6rem;
   top: .7rem;
   animation: swing 8s infinite forwards;
-  width: 8.9rem;
+  width: 9rem;
   height: 16rem;
   opacity: 0;
   transition: all .3s;
