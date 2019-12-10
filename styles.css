@@ -67,16 +67,19 @@ body {
 }
 
 .unit {
-  color: var(--color-yellow-grey);
   font-weight: normal;
   font-size: 3rem;
   letter-spacing: normal;
+  margin-left: -2.7rem;
+  color: white;
+  display: inline-block;
 }
 
 .change-location {
   display: flex;
   flex-direction: column;
   width: 200px;
+  margin-top: -1rem;
 }
 
 input, input:focus {
@@ -89,11 +92,6 @@ input, input:focus {
   color: var(--color-yellow-grey);
   font-size: 2.7rem;
   width: 32rem
-}
-
-.unit {
-  display: inline-block;
-  margin-left: -2.2rem;
 }
 
 .box {
@@ -116,7 +114,7 @@ sub {
   flex-direction: column;
   align-items: flex-end;
   padding-right: 12rem;
-  padding-top: 4.1rem;
+  padding-top: 2.1rem;
 }
 
 .forecast {
@@ -125,8 +123,9 @@ sub {
   flex-direction: column;
   align-items: flex-start;
   padding-left: 11rem;
-  padding-top: 4.1rem;
+  padding-top: 2.1rem;
   letter-spacing: .6px;
+  position: relative;
 }
 
 .current h1{
@@ -137,8 +136,10 @@ sub {
 
 
 .place {
-  padding-right: 7.2rem;
-  transform: translateX(67px);
+  transform: translateX(120px);
+  margin-bottom: 2rem;
+  width: 32rem;
+  padding-right: 1rem;
   font-size: 2.4rem;
 }
 
@@ -184,19 +185,21 @@ button{
 
 button:hover {
   box-shadow: 1px 5px 3px 0px #d28a40;
+  transform: rotate(-3deg);
 }
 
 label {
-  margin-bottom: 1rem;
+  margin-bottom: 3px;
 }
 
 svg {
-    position: absolute;
-    left: -14.9rem;
-    width: 9rem;
-    height: 16rem;
-    animation: dance 8s infinite forwards;
-    display: none;
+  position: absolute;
+  left: -16.3rem;
+  width: 9rem;
+  height: 16rem;
+  animation: dance 8s infinite forwards;
+  display: none;
+  top: 1.1rem;
 }
 
 @keyframes dance {
@@ -206,7 +209,7 @@ svg {
 
 
   25% {
-    transform: rotate(10deg) scale(1);
+    transform: rotate(4deg) scale(1);
   }
 
   50% {
@@ -214,7 +217,7 @@ svg {
   }
 
   75% {
-    transform: rotate(-10deg) scale(1);
+    transform: rotate(-4deg) scale(1);
   }
 
 
@@ -234,4 +237,24 @@ input:-webkit-autofill:active {
 
 .temperature {
   position: relative
+}
+
+.info {
+  position: relative;
+}
+
+.icon1 {
+  position: absolute;
+  /* top: 25.8rem;
+  left: 29rem;  */
+  top: 13.2rem;
+  left: 18rem;
+}
+
+.icon2 {
+  position: absolute;
+  /* top: 52rem;
+  left: 29rem;  */
+  top: 13.2rem;
+  left: 18rem;
 }

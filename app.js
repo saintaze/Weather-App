@@ -49,14 +49,6 @@ window.addEventListener('load', async () => {
       .then(data => data)
   }
 
-  const getGeoLoc = () => {
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(pos => {
-        
-      })
-    }
-  }
-
   const toTitleCase = (phrase) => {
     return phrase
       .toLowerCase()
@@ -70,8 +62,66 @@ window.addEventListener('load', async () => {
     skycons.set(id, iconName);
     skycons.play();
   }
-  getGeoLoc();
-  console.log('he', geoLng, geoLat)
+
+  const getGeoLoc = async () => {
+    const geoApiKey = 'f73e3d2d85744784a8c22f907bf4cd99';
+    const res = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${geoApiKey}`);
+    const data = await res.json()
+    console.log(data);
+    
+    var weatherData = await getWeatherData({lng: data.longitude, lat: data.latitude});
+    const todayTemp = weatherData.currently.temperature;
+    const firstDay = weatherData.daily.data[0];
+    const secondDay = weatherData.daily.data[1];
+
+    placeEl.textContent = toTitleCase(data.city) + ', ' + data.country_name;
+    todayH2El.style.display = 'block';
+    tomorrowH2El.style.display = 'block';
+    svgEl.style.display = 'block';
+
+    fahrenheitEl.innerHTML = `
+      ${Math.floor(todayTemp)}
+      <span class="unit">
+        <div class="box">
+          <sup>°</sup>
+          <sub>Fahrenheit</sub>
+        </div> 
+      </span>
+    `
+    celciusEl.innerHTML = `
+      ${Math.floor(convertToCelcius(todayTemp))}
+      <div class="unit">
+        <div class="box">
+          <sup>°</sup>
+          <sub>Celcius</sub>
+        </div> 
+      </div>
+    `
+
+    // FIRST DAY
+    todayCondition.textContent = firstDay.summary.replace('.', '');
+    todayHigh.innerHTML = '<span class="hell">High:</span> ' + Math.floor(firstDay.temperatureHigh) + '°F' + ' / ' + Math.floor(convertToCelcius(firstDay.temperatureHigh)) + '°C'
+    todayLow.textContent = 'Low: ' + Math.floor(firstDay.temperatureLow) + '°F' + ' / ' + Math.floor(convertToCelcius(firstDay.temperatureLow)) + '°C'
+    todayHumidity.textContent = 'Humidity: ' + Math.floor(firstDay.humidity * 100) + '%'
+    todayWind.textContent = 'Wind: ' + firstDay.windSpeed + "mph"
+    todayRain.textContent = 'Rain: ' + firstDay.precipProbability * 100 + '% chance'
+    setIcon(icon1, firstDay.icon)
+
+
+    // SECOND DAY
+    tomorrowCondition.textContent = secondDay.summary.replace('.', '');
+    tomorrowHigh.textContent = 'High: ' + Math.floor(secondDay.temperatureHigh) + '°F' + ' / ' + Math.floor(convertToCelcius(secondDay.temperatureHigh)) + '°C'
+    tomorrowLow.textContent = 'Low: ' + Math.floor(secondDay.temperatureLow) + '°F' + ' / ' + Math.floor(convertToCelcius(secondDay.temperatureLow)) + '°C'
+    tomorrowHumidity.textContent = 'Humidity: ' + Math.floor(secondDay.humidity * 100) + '%'
+    tomorrowWind.textContent = 'Wind: ' + secondDay.windSpeed + "mph"
+    tomorrowRain.textContent = 'Rain: ' + Math.floor(secondDay.precipProbability * 100) + '% chance'
+    setIcon(icon2, secondDay.icon)
+
+    console.log(weatherData)
+    
+  }
+
+  getGeoLoc()
 
   btnEl.addEventListener('click', async (e) => {
     const coordsData = await convertNameToCoords(inputEl.value);
@@ -81,12 +131,7 @@ window.addEventListener('load', async () => {
     const { city, continent, country, country_code } = locationInfo.components
     console.log(locationInfo)
     
-    if (geoLat && geoLng){
-      var weatherData = await getWeatherData({lng: geoLng, lat:geoLat});
-    }else{
-      var weatherData = await getWeatherData(locationInfo.geometry);
-    }
-
+    var weatherData = await getWeatherData(locationInfo.geometry);
     const todayTemp = weatherData.currently.temperature;
     const firstDay =  weatherData.daily.data[0];
     const secondDay =  weatherData.daily.data[1];
