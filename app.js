@@ -29,7 +29,7 @@ window.addEventListener('load', async () => {
   const tomorrowWind = document.querySelector('.tomorrow .wind');
   const tomorrowRain = document.querySelector('.tomorrow .rain');
 
-  const weatherApiKey = '7caadd8c151af9ea593bfc2cd0746ebe';
+  const weatherApiKey = 'ead34245ca2ab83931b4369bb4a80be2';
   const convertToCelcius = fahr => (fahr - 32) * (5/9) 
 
   const convertNameToCoords = async (cityName="london") => {

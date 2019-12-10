@@ -149,7 +149,7 @@ sub {
 }
 
 .today {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .today h2, .tomorrow h2 {
@@ -195,7 +195,7 @@ svg {
     left: -14.9rem;
     width: 9rem;
     height: 16rem;
-    animation: dance 6s infinite forwards;
+    animation: dance 8s infinite forwards;
     display: none;
 }
 
