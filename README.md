@@ -12,7 +12,7 @@ An app for checking weather.
 + Javascript (Vanilla)
 
 # Live Version
-#### URL: [Find Your Weather](https://rawcdn.githack.com/saintaze/Weather-App/750ed0b44f3faf6573c06a0f907fe8751357d915/index.html)
+#### URL: [Find Your Weather](https://saintaze.github.io/Weather-App/)
 
 # Authors
 + Saintaze [@saintaze](https://github.com/saintaze/)
