@@ -1,14 +1,8 @@
 window.addEventListener('load', async () => {
-  let geoLat = null;
-  let geoLng = null;
 
   const placeEl = document.querySelector('.place');
   const celciusEl = document.querySelector('.celcius');
-  const celciusDegreeEl = document.querySelector('.celcius sup');
-  const celciusUnitEl = document.querySelector('.celcius sub');
   const fahrenheitEl = document.querySelector('.fahrenheit');
-  const fahrenheitDegreeEl = document.querySelector('.fahrenheit sup');
-  const fahrenheitUnitEl = document.querySelector('.fahrenheit sub');
   const inputEl = document.querySelector('input');
   const btnEl = document.querySelector('.btn');
   const todayH2El = document.querySelector('.today h2');
@@ -68,7 +62,7 @@ window.addEventListener('load', async () => {
     const geoApiKey = 'f73e3d2d85744784a8c22f907bf4cd99';
     const res = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${geoApiKey}`);
     const data = await res.json()
-    console.log(data);
+    // console.log(data);
     
     var weatherData = await getWeatherData({lng: data.longitude, lat: data.latitude});
     const todayTemp = weatherData.currently.temperature;
@@ -119,7 +113,7 @@ window.addEventListener('load', async () => {
     tomorrowRain.textContent = 'Rain: ' + Math.floor(secondDay.precipProbability * 100) + '% chance'
     setIcon(icon2, secondDay.icon)
 
-    console.log(weatherData)
+    // console.log(weatherData)
     
   }
 
@@ -131,7 +125,7 @@ window.addEventListener('load', async () => {
     inputEl.value = ''
     const locationInfo  = coordsData.results[0];
     const { city, continent, country, country_code } = locationInfo.components
-    console.log(locationInfo)
+    // console.log(locationInfo)
     
     var weatherData = await getWeatherData(locationInfo.geometry);
     const todayTemp = weatherData.currently.temperature;
@@ -180,7 +174,7 @@ window.addEventListener('load', async () => {
     tomorrowRain.textContent = 'Rain: ' + Math.floor(secondDay.precipProbability * 100) + '% chance'
     setIcon(icon2, secondDay.icon)
 
-    console.log(weatherData)
+    // console.log(weatherData)
   });
 
   
