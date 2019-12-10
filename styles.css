@@ -26,6 +26,7 @@ body {
   display: flex;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 
@@ -199,7 +200,7 @@ label {
 .meter {
   position: absolute;
   left: -15.9rem;
-  width: 9rem;
+  width: 8.9rem;
   height: 16rem;
   animation: dance 8s infinite forwards;
   opacity: 0;
@@ -261,7 +262,7 @@ input:-webkit-autofill:active {
   left: -15.6rem;
   top: .7rem;
   animation: swing 8s infinite forwards;
-  width: 9rem;
+  width: 8.9rem;
   height: 16rem;
   opacity: 0;
   transition: all .3s;
@@ -315,3 +316,20 @@ input:-webkit-autofill:active {
     transform: scale(.95);
   }
 }
+
+.flower-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  width: 19px;
+  height: 19px
+}
+
+.flower-loader:not(:required){
+  position: absolute;
+}
+

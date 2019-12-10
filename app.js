@@ -9,6 +9,7 @@ window.addEventListener('load', async () => {
   const tomorrowH2El = document.querySelector('.tomorrow h2');
   const meterEl = document.querySelector('.meter');
   const teleEl = document.querySelector('.tele');
+  const loaderEl = document.querySelector('[class$="-loader"]');
   
   const todayCondition = document.querySelector('.today .condition');
   const todayHigh = document.querySelector('.today .high');
@@ -64,10 +65,12 @@ window.addEventListener('load', async () => {
     const data = await res.json()
     // console.log(data);
     
+    loaderEl.style.display = 'none';
     var weatherData = await getWeatherData({lng: data.longitude, lat: data.latitude});
     const todayTemp = weatherData.currently.temperature;
     const firstDay = weatherData.daily.data[0];
     const secondDay = weatherData.daily.data[1];
+
 
     placeEl.textContent = toTitleCase(data.city) + ', ' + data.country_name;
     todayH2El.style.opacity = '1';
@@ -120,18 +123,29 @@ window.addEventListener('load', async () => {
   getGeoLoc()
 
   btnEl.addEventListener('click', async (e) => {
+
+    if (inputEl.value.trim() !== ''){
+      loaderEl.style.display = 'inline-block';
+    }
     const coordsData = await convertNameToCoords(inputEl.value);
     let cityName = inputEl.value
     inputEl.value = ''
     const locationInfo  = coordsData.results[0];
+    if (!locationInfo){
+      loaderEl.style.display = 'none';
+    }
     const { city, continent, country, country_code } = locationInfo.components
-    // console.log(locationInfo)
+    console.log(locationInfo)
     
     var weatherData = await getWeatherData(locationInfo.geometry);
     const todayTemp = weatherData.currently.temperature;
     const firstDay =  weatherData.daily.data[0];
     const secondDay =  weatherData.daily.data[1];
+    
+    
+    
     placeEl.textContent = toTitleCase(cityName) + ', ' + country;
+    loaderEl.style.display = 'none';
     todayH2El.style.opacity = '1';
     tomorrowH2El.style.opacity = '1';
     teleEl.style.opacity = '1';
@@ -174,7 +188,7 @@ window.addEventListener('load', async () => {
     tomorrowRain.textContent = 'Rain: ' + Math.floor(secondDay.precipProbability * 100) + '% chance'
     setIcon(icon2, secondDay.icon)
 
-    // console.log(weatherData)
+    console.log(weatherData)
   });
 
   
