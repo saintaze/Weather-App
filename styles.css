@@ -80,6 +80,7 @@ body {
   flex-direction: column;
   width: 200px;
   margin-top: -1rem;
+  position: relative;
 }
 
 input, input:focus {
@@ -168,6 +169,8 @@ sub {
 
 canvas {
   transform: translateY(-29px);
+  animation: blink 8s infinite forwards;
+  
 }
 
 button{
@@ -192,7 +195,7 @@ label {
   margin-bottom: 3px;
 }
 
-svg {
+.meter {
   position: absolute;
   left: -16.3rem;
   width: 9rem;
@@ -243,18 +246,67 @@ input:-webkit-autofill:active {
   position: relative;
 }
 
-.icon1 {
+.icon1, .icon2 {
   position: absolute;
-  /* top: 25.8rem;
-  left: 29rem;  */
-  top: 13.2rem;
+  top: 10.8rem;
   left: 18rem;
 }
 
-.icon2 {
+
+.tele {
   position: absolute;
-  /* top: 52rem;
-  left: 29rem;  */
-  top: 13.2rem;
-  left: 18rem;
+  left: -15.8rem;
+  top: 1.5rem;
+  animation: swing 8s infinite forwards;
+  width: 9rem;
+  height: 16rem;
+}
+
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg) scale(.9);
+  }
+
+
+  25% {
+    transform: rotateZ(4deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(.9);
+  }
+
+  75% {
+    transform: rotateZ(-4deg) scale(1);
+  }
+
+
+  100% {
+    transform: rotate(0deg) scale(.9);
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(.9);
+  }
+
+
+  25% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(.9);
+  }
+
+  75% {
+    transform: scale(1);
+  }
+
+
+  100% {
+    transform: scale(.9);
+  }
 }
