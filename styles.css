@@ -214,7 +214,7 @@ label {
 
 
   25% {
-    transform: rotate(4deg) scale(1);
+    transform: rotate(3deg) scale(1);
   }
 
   50% {
@@ -222,7 +222,7 @@ label {
   }
 
   75% {
-    transform: rotate(-4deg) scale(1);
+    transform: rotate(-3deg) scale(1);
   }
 
 
@@ -275,7 +275,7 @@ input:-webkit-autofill:active {
 
 
   25% {
-    transform: rotateZ(4deg) scale(1);
+    transform: rotateZ(3deg) scale(1);
   }
 
   50% {
@@ -283,7 +283,7 @@ input:-webkit-autofill:active {
   }
 
   75% {
-    transform: rotateZ(-4deg) scale(1);
+    transform: rotateZ(-3deg) scale(1);
   }
 
 
