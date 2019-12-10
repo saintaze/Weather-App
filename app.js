@@ -103,7 +103,7 @@ window.addEventListener('load', async () => {
     todayLow.textContent = 'Low: ' + Math.floor(firstDay.temperatureLow) + '°F' + ' / ' + Math.floor(convertToCelcius(firstDay.temperatureLow)) + '°C'
     todayHumidity.textContent = 'Humidity: ' + Math.floor(firstDay.humidity * 100) + '%'
     todayWind.textContent = 'Wind: ' + firstDay.windSpeed + "mph"
-    todayRain.textContent = 'Rain: ' + firstDay.precipProbability * 100 + '% chance'
+    todayRain.textContent = 'Rain: ' + Math.floor(firstDay.precipProbability * 100) + '% chance'
     setIcon(icon1, firstDay.icon)
 
 
@@ -175,7 +175,7 @@ window.addEventListener('load', async () => {
     todayLow.textContent = 'Low: ' + Math.floor(firstDay.temperatureLow) + '°F' + ' / ' + Math.floor(convertToCelcius(firstDay.temperatureLow)) + '°C'
     todayHumidity.textContent = 'Humidity: ' + Math.floor(firstDay.humidity * 100) + '%'
     todayWind.textContent = 'Wind: ' + firstDay.windSpeed + "mph"
-    todayRain.textContent = 'Rain: ' + firstDay.precipProbability * 100 + '% chance'
+    todayRain.textContent = 'Rain: ' + Math.floor(firstDay.precipProbability * 100) + '% chance'
     setIcon(icon1, firstDay.icon)
 
 
