@@ -4,7 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --color-yellow: #f5a623;
+  --color-yellow:#f5a623;
   --color-yellow-grey: #ffd693;
 }
 
@@ -158,7 +158,8 @@ sub {
   margin-bottom: 2rem;
   color: var(--color-yellow-grey);
   font-weight: 500;
-  display: none;
+  opacity: 0;
+  transition: all .3s;
 }
 
 .today, .tomorrow {
@@ -188,7 +189,7 @@ button{
 
 button:hover {
   box-shadow: 1px 5px 3px 0px #d28a40;
-  transform: rotate(-3deg);
+  transform: rotate(-3deg) scale(1.03);
 }
 
 label {
@@ -197,12 +198,13 @@ label {
 
 .meter {
   position: absolute;
-  left: -16.3rem;
+  left: -15.9rem;
   width: 9rem;
   height: 16rem;
   animation: dance 8s infinite forwards;
-  display: none;
-  top: 1.1rem;
+  opacity: 0;
+  top: 0.5rem;
+  transition: all .3s;
 }
 
 @keyframes dance {
@@ -239,7 +241,8 @@ input:-webkit-autofill:active {
 }
 
 .temperature {
-  position: relative
+  position: relative;
+  
 }
 
 .info {
@@ -255,11 +258,13 @@ input:-webkit-autofill:active {
 
 .tele {
   position: absolute;
-  left: -15.8rem;
-  top: 1.5rem;
+  left: -15.6rem;
+  top: .7rem;
   animation: swing 8s infinite forwards;
   width: 9rem;
   height: 16rem;
+  opacity: 0;
+  transition: all .3s;
 }
 
 

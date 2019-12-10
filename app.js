@@ -13,7 +13,8 @@ window.addEventListener('load', async () => {
   const btnEl = document.querySelector('.btn');
   const todayH2El = document.querySelector('.today h2');
   const tomorrowH2El = document.querySelector('.tomorrow h2');
-  const svgEl = document.querySelector('svg');
+  const meterEl = document.querySelector('.meter');
+  const teleEl = document.querySelector('.tele');
   
   const todayCondition = document.querySelector('.today .condition');
   const todayHigh = document.querySelector('.today .high');
@@ -75,9 +76,10 @@ window.addEventListener('load', async () => {
     const secondDay = weatherData.daily.data[1];
 
     placeEl.textContent = toTitleCase(data.city) + ', ' + data.country_name;
-    todayH2El.style.display = 'block';
-    tomorrowH2El.style.display = 'block';
-    svgEl.style.display = 'block';
+    todayH2El.style.opacity = '1';
+    tomorrowH2El.style.opacity = '1';
+    meterEl.style.opacity = '1';
+    teleEl.style.opacity = '1';
 
     fahrenheitEl.innerHTML = `
       ${Math.floor(todayTemp)}
@@ -136,9 +138,9 @@ window.addEventListener('load', async () => {
     const firstDay =  weatherData.daily.data[0];
     const secondDay =  weatherData.daily.data[1];
     placeEl.textContent = toTitleCase(cityName) + ', ' + country;
-    todayH2El.style.display = 'block';
-    tomorrowH2El.style.display = 'block';
-    svgEl.style.display = 'block';
+    todayH2El.style.opacity = '1';
+    tomorrowH2El.style.opacity = '1';
+    teleEl.style.opacity = '1';
 
     fahrenheitEl.innerHTML = `
       ${Math.floor(todayTemp)}

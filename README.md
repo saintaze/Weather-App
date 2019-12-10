@@ -12,7 +12,7 @@ An app for checking weather.
 + Javascript (Vanilla)
 
 # Live Version
-#### URL: [Start Taking Notes](https://note-taking.ayezahmed.now.sh )
+#### URL: [Find Your Weather](https://note-taking.ayezahmed.now.sh )
 
 # Authors
 + Saintaze [@saintaze](https://github.com/saintaze/)
