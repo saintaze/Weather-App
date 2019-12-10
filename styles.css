@@ -209,25 +209,25 @@ label {
 
 @keyframes dance {
   0% {
-    transform: rotate(0deg) scale(.9);
+    transform: rotate(0deg) scale(.95);
   }
 
 
   25% {
-    transform: rotate(3deg) scale(1);
+    transform: rotate(2deg) scale(1);
   }
 
   50% {
-    transform: rotate(0deg) scale(.9);
+    transform: rotate(0deg) scale(.95);
   }
 
   75% {
-    transform: rotate(-3deg) scale(1);
+    transform: rotate(-2deg) scale(1);
   }
 
 
   100% {
-    transform: rotate(0deg) scale(.9);
+    transform: rotate(0deg) scale(.95);
   }
 
 }
@@ -270,31 +270,31 @@ input:-webkit-autofill:active {
 
 @keyframes swing {
   0% {
-    transform: rotate(0deg) scale(.9);
+    transform: rotate(0deg) scale(.95);
   }
 
 
   25% {
-    transform: rotateZ(3deg) scale(1);
+    transform: rotateZ(2deg) scale(1);
   }
 
   50% {
-    transform: rotate(0deg) scale(.9);
+    transform: rotate(0deg) scale(.95);
   }
 
   75% {
-    transform: rotateZ(-3deg) scale(1);
+    transform: rotateZ(-2deg) scale(1);
   }
 
 
   100% {
-    transform: rotate(0deg) scale(.9);
+    transform: rotate(0deg) scale(.95);
   }
 }
 
 @keyframes blink {
   0% {
-    transform: scale(.9);
+    transform: scale(.95);
   }
 
 
@@ -303,7 +303,7 @@ input:-webkit-autofill:active {
   }
 
   50% {
-    transform: scale(.9);
+    transform: scale(.95);
   }
 
   75% {
@@ -312,6 +312,6 @@ input:-webkit-autofill:active {
 
 
   100% {
-    transform: scale(.9);
+    transform: scale(.95);
   }
 }
