@@ -1,5 +1,5 @@
 # Weather-App
-An app for checking weather. 
+An app for getting latest weather for yoru city. 
 
 ### Features
 + Finds weather automatically based on GeoLocation.
@@ -14,7 +14,7 @@ An app for checking weather.
 # Live Version
 #### URL: [Find Your Weather](https://saintaze.github.io/Weather-App/)
 
-# Authors
-+ Saintaze [@saintaze](https://github.com/saintaze/)
+# Author
+Saintaze [@saintaze](https://github.com/saintaze/)
 
 
