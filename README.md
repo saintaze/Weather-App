@@ -1,5 +1,5 @@
 # Weather-App
-An app for getting latest weather for yoru city. 
+An app for getting latest weather for your city. 
 
 ### Features
 + Finds weather automatically based on GeoLocation.
